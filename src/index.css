@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button.primary {
+    @apply w-fit border border-primary px-2 py-2 text-sm font-medium duration-300 hover:bg-primary hover:text-white;
+}
+
+button.primary-extended {
+    @apply w-fit border border-primary px-12 py-2 text-sm font-medium duration-300 hover:bg-primary hover:text-white;
+}
+
+input.form {
+    @apply outline-none text-base font-medium border-b border-black;
+}
+
+input.form-animated {
+    @apply outline-none text-base font-medium border-b border-black duration-300 focus:border-primary focus:text-primary focus:pl-2;
+}
+
+.background-input {
+    background-image: linear-gradient(to right, black 24%, transparent 24%, transparent 26%, black 26%, black 49%, transparent 49%, transparent 51%, black 51%, black 74%, transparent 74%, transparent 76%, black 76%);
+}
