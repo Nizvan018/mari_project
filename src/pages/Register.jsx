@@ -1,10 +1,13 @@
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const navigation = useNavigate();
 
     const onSubmit = handleSubmit((data) => {
         console.log('Correcto!', data); // Aquí va el código para inciar sesión
+        navigation('/login');
     });
 
     return (
