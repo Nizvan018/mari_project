@@ -1,8 +1,19 @@
 import { GiFallingStar } from "react-icons/gi";
 import { PiParkLight } from "react-icons/pi";
 import { FaHandHoldingHeart } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+
+// CANCER INFORMATION:
+const cancerTitle = "Guerreros con cáncer";
+const cancerDescription = "El cáncer es una batalla que enfrentan valiéntemente muchos niños cada día. Con tu ayuda, podemos brindarles el tratamiento y el apoyo que necesitan para enfrentarse a este desafío con coraje y esperanza. Cada donación marca la diferencia en la vida de estos guerreros, ofreciéndoles la oportunidad de una vida más saludable y feliz.";
 
 export default function Treatments() {
+    const navigation = useNavigate();
+
+    const goToHistories = (title, description) => {
+        navigation('/histories', { state: { title: title, description: description } });
+    }
+
     return (
         <section className="flex flex-col items-center w-full gap-12">
             <h2 className="text-primary text-3xl font-bold">Tratamientos para apoyar</h2>
@@ -11,8 +22,8 @@ export default function Treatments() {
                 {/* CÁNCER */}
                 <div className="flex flex-col gap-4 items-center w-1/3 px-4 py-8 bg-cream">
                     <GiFallingStar className="text-custom_orange" size={48} />
-                    <button className="primary">Guerreros con cáncer</button>
-                    <p className="text-primary text-sm text-center">El cáncer es una batalla que enfrentan valiéntemente muchos niños cada día. Con tu ayuda, podemos brindarles el tratamiento y el apoyo que necesitan para enfrentarse a este desafío con coraje y esperanza. Cada donación marca la diferencia en la vida de estos guerreros, ofreciéndoles la oportunidad de una vida más saludable y feliz.</p>
+                    <button onClick={() => goToHistories(cancerTitle, cancerDescription)} className="primary">{cancerTitle}</button>
+                    <p className="text-primary text-sm text-center">{cancerDescription}</p>
                 </div>
 
                 {/* FIBROSIS QUÍSTICA */}
